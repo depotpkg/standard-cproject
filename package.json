@@ -1,0 +1,20 @@
+{
+  "name": "standard-cproject",
+  "version": "0.0.1",
+  "description": "Scaffold a C library project from a template",
+  "repository": "depotpkg/standard-cproject",
+  "license": "MIT",
+  "bin": {
+    "standard-cproject": "src/index.js"
+  },
+  "files": [
+    "src",
+    "template"
+  ],
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  }
+}

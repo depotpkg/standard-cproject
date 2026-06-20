@@ -5,10 +5,10 @@
   "repository": "depotpkg/standard-cproject",
   "license": "MIT",
   "bin": {
-    "standard-cproject": "src/index.js"
+    "standard-cproject": "bin/init.js"
   },
   "files": [
-    "src",
+    "bin",
     "template"
   ],
   "dependencies": {

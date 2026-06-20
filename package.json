@@ -1,6 +1,6 @@
 {
   "name": "standard-cproject",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Scaffold a C library project from a template",
   "repository": "depotpkg/standard-cproject",
   "license": "MIT",

@@ -1,5 +1,5 @@
-#ifndef {{PROJECT_NAME_UPPER}}_H_
-#define {{PROJECT_NAME_UPPER}}_H_
+#ifndef {{projectNameUpper}}_H_
+#define {{projectNameUpper}}_H_
 
 #include <stddef.h>
 
@@ -21,4 +21,4 @@
 
 {{shortPrefix}}_API int {{projectName}}();
 
-#endif  // {{PROJECT_NAME_UPPER}}_H_
+#endif  // {{projectNameUpper}}_H_

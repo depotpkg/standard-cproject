@@ -25,7 +25,7 @@ You'll be prompted for:
 The CLI then:
 1. Copies the template to your target directory
 2. Renames `{{projectName}}.c` / `{{projectName}}.h` to match your project
-3. Replaces all `{{projectName}}`, `{{shortPrefix}}`, `{{PROJECT_NAME_UPPER}}` placeholders in file contents
+3. Replaces all placeholders in file contents
 
 ## What you get
 

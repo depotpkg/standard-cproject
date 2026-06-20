@@ -10,8 +10,8 @@ const TEMPLATE_DIR = path.join(__dirname, "..", "template");
 const REPLACEMENTS = {
   projectName: null,
   shortName: null,
+  projectNameUpper: null,
   shortPrefix: null,
-  PROJECT_NAME_UPPER: null,
 };
 
 function walkDir(dir, callback) {
@@ -63,8 +63,8 @@ function renameFiles(dir) {
   walkDir(dir, (fullPath) => {
     const dirName = path.dirname(fullPath);
     const baseName = path.basename(fullPath);
-    if (baseName.includes("{{projectName}}")) {
-      const newName = baseName.split("{{projectName}}").join(REPLACEMENTS.projectName);
+    if (baseName.includes("__projectName__")) {
+      const newName = baseName.split("__projectName__").join(REPLACEMENTS.projectName);
       renames.push({ oldPath: fullPath, newPath: path.join(dirName, newName) });
     }
   });
@@ -79,15 +79,15 @@ function renameFiles(dir) {
 function scaffold(dest, { projectName, shortName }) {
   REPLACEMENTS.projectName = projectName;
   REPLACEMENTS.shortName = shortName;
+  REPLACEMENTS.projectNameUpper = projectName.toUpperCase();
   REPLACEMENTS.shortPrefix = shortName.toUpperCase();
-  REPLACEMENTS.PROJECT_NAME_UPPER = projectName.toUpperCase();
 
   console.log(`Scaffolding C project in ${dest}...`);
 
   // Copy template
   copyDir(TEMPLATE_DIR, dest);
 
-  // Rename files with {{projectName}} in the name
+  // Rename files with __projectName__ in the name
   renameFiles(dest);
 
   // Replace placeholders in all file contents
